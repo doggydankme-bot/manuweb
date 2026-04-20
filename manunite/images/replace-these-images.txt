@@ -1,0 +1,2 @@
+Replace the images in this folder with your own pictures.
+Current files are placeholders so the pages display straight away.
