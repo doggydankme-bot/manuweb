@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manchester United Supporters Club - Gallery</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="wrapper">
+        <header>
+            <div id="top">
+                <div id="LeftHeader">
+                    <div id="imageLogo">
+                        <a href="index.html"><img src="images/logo.png" alt="PicLogo" width="80" height="50"></a>
+                    </div>
+                <div id="logo">MU Supporters Club</div>
+            </div>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="events.html">Events</a></li>
+                        <li><a href="results.html">Results</a></li>
+                        <li><a href="gallery.html" class="active">Gallery</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="links.html">Useful Links</a></li>
+                        <li><a href="about.html">About</a></li>
+                    </ul>
+                </nav>
+
+            </div>
+            <h1>Photo Gallery</h1>
+        </header>
+
+        <div class="hero-image">
+            <img src="images/hero2.png" alt="Supporters image" >
+        </div>
+
+        <main>
+
+            <section>
+                <div class="section-title">Photo Gallery</div>
+                <p class="intro-text">Move your mouse over the smaller images to change the main image.</p>
+                <img src="images/gallery1.jpg" alt="Main gallery image" id="mainGallery" class="gallery-main">
+                <p id="galleryText">Gallery Image 1</p>
+            </section>
+
+            <section>
+                
+                <div class="thumb-row">
+                    <img src="images/gallery1.jpg" alt="Gallery image 1" onmouseover="changeImage('images/gallery1.jpg', 'Gallery Image 1')">
+                    <img src="images/gallery2.jpg" alt="Gallery image 2" onmouseover="changeImage('images/gallery2.jpg', 'Gallery Image 2')">
+                    <img src="images/gallery3.jpg" alt="Gallery image 3" onmouseover="changeImage('images/gallery3.jpg', 'Gallery Image 3')">
+                    <img src="images/gallery4.jpg" alt="Gallery image 4" onmouseover="changeImage('images/gallery4.jpg', 'Gallery Image 4')">
+                </div>
+            </section>
+
+        </main>
+
+        <footer>
+            <div class="footer-content">
+                <p>Manchester United Supporters Club</p>
+            </div>
+            <div class="social-links">
+                <a href="https://www.facebook.com/manchesterunited" target="_blank">Facebook</a>
+                <a href="https://twitter.com/ManUtd" target="_blank">Twitter</a>
+                <a href="https://www.instagram.com/manchesterunited/" target="_blank">Instagram</a>
+            </div>
+
+
+        </footer>
+    </div>
+
+<script>
+function changeImage(fileName, caption)
+{
+    document.getElementById("mainGallery").src = fileName;
+    document.getElementById("galleryText").innerHTML = caption;
+}
+</script>
+
+</body>
+</html>

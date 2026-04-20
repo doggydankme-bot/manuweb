@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manchester United Supporters Club - Contact</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="wrapper">
+        <header>
+            <div id="top">
+                <div id="LeftHeader">
+                    <div id="imageLogo">
+                        <a href="index.html"><img src="images/logo.png" alt="PicLogo" width="80" height="50"></a>
+                    </div>
+                <div id="logo">MU Supporters Club</div>
+            </div>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="events.html">Events</a></li>
+                        <li><a href="results.html">Results</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="contact.html" class="active">Contact</a></li>
+                        <li><a href="links.html">Useful Links</a></li>
+                        <li><a href="about.html">About</a></li>
+                    </ul>
+                </nav>
+
+            </div>
+            <h1>Contact Us</h1>
+        </header>
+
+        <div class="hero-image">
+            <img src="images/hero.png" alt="Supporters image" >
+        </div>
+
+        <main>
+
+            <section>
+                <div class="section-title2">Contact Us</div>
+                <p class="contantssss">Use this form to contact the supporters club.</p>
+                <form action="http://rdwd.atspace.cc/response.php" method="post" onsubmit="return validateForm();">
+                    <fieldset>
+                        <legend>Contact Form</legend>
+
+                        <label for="name">Name</label>
+                        <input type="text" name="name" id="name">
+                        <span class="error" id="nameError"></span>
+
+                        <label for="address">Address</label>
+                        <input type="text" name="address" id="address">
+
+                        <label for="mobile">Mobile</label>
+                        <input type="text" name="mobile" id="mobile">
+                        <span class="error" id="mobileError"></span>
+
+                        <label for="email1">Email</label>
+                        <input type="text" name="email1" id="email1">
+                        <span class="error" id="email1Error"></span>
+
+                        <label for="email2">Retype your Email</label>
+                        <input type="text" name="email2" id="email2">
+                        <span class="error" id="email2Error"></span>
+
+                        <label>Are you a member?</label>
+                        <div class="radio-line">
+                            <label for="member_yes"><input type="radio" name="member" id="member_yes"> Member</label>
+                            <label for="member_no"><input type="radio" name="member" id="member_no"> Non-member</label>
+                        </div>
+                        <span class="error" id="memberError"></span>
+
+                        <label for="query">Query / Comment</label>
+                        <textarea name="query" id="query" rows="6" cols="40"></textarea>
+                        <span class="error" id="queryError"></span>
+
+                        <input type="submit" value="Submit">
+                        <input type="reset" value="Reset">
+                    </fieldset>
+                </form>
+            </section>
+            <div class="section-title2">Contact Us</div>
+
+        </main>
+
+        <footer>
+            <div class="footer-content">
+                <p>Manchester United Supporters Club</p>
+            </div>
+            <div class="social-links">
+                <a href="https://www.facebook.com/manchesterunited" target="_blank">Facebook</a>
+                <a href="https://twitter.com/ManUtd" target="_blank">Twitter</a>
+                <a href="https://www.instagram.com/manchesterunited/" target="_blank">Instagram</a>
+            </div>
+
+
+        </footer>
+    </div>
+
+<script>
+function validateForm()
+{
+    let valid = true;
+
+    document.getElementById("nameError").innerHTML = "";
+    document.getElementById("mobileError").innerHTML = "";
+    document.getElementById("email1Error").innerHTML = "";
+    document.getElementById("email2Error").innerHTML = "";
+    document.getElementById("memberError").innerHTML = "";
+    document.getElementById("queryError").innerHTML = "";
+
+    let name = document.getElementById("name").value.trim();
+    let mobile = document.getElementById("mobile").value.trim();
+    let email1 = document.getElementById("email1").value.trim();
+    let email2 = document.getElementById("email2").value.trim();
+    let query = document.getElementById("query").value.trim();
+
+    if (name === "")
+    {
+        document.getElementById("nameError").innerHTML = "Please enter your name";
+        valid = false;
+    }
+
+    let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (email1 === "")
+    {
+        document.getElementById("email1Error").innerHTML = "Please enter your email";
+        valid = false;
+    }
+    else if (!emailPattern.test(email1))
+    {
+        document.getElementById("email1Error").innerHTML = "Please enter a valid email";
+        valid = false;
+    }
+
+    if (email2 === "")
+    {
+        document.getElementById("email2Error").innerHTML = "Please retype your email";
+        valid = false;
+    }
+    else if (email1 !== email2)
+    {
+        document.getElementById("email2Error").innerHTML = "Emails do not match";
+        valid = false;
+    }
+
+    let mobilePattern = /^(085|086|087)\d{7}$/;
+    if (mobile !== "" && !mobilePattern.test(mobile))
+    {
+        document.getElementById("mobileError").innerHTML = "Mobile must start with 085, 086 or 087";
+        valid = false;
+    }
+
+    if (!document.getElementById("member_yes").checked && !document.getElementById("member_no").checked)
+    {
+        document.getElementById("memberError").innerHTML = "Please choose member or non-member";
+        valid = false;
+    }
+
+    if (query === "")
+    {
+        document.getElementById("queryError").innerHTML = "Please enter your comment or query";
+        valid = false;
+    }
+
+    return valid;
+}
+</script>
+
+</body>
+</html>
